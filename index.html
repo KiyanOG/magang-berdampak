@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Magang Berdampak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <span class="pill"><i></i>Magang Berdampak</span>
+        <h1>Pusat Informasi &amp; Pengumpulan Magang</h1>
+        <p>Panduan, format, dan tautan pengumpulan dokumen magang ada di satu tempat.</p>
+      </div>
+      <ol class="steps">
+        <b>Alur singkat</b>
+        <li><span>1</span>Baca panduan &amp; format</li>
+        <li><span>2</span>Siapkan dokumen</li>
+        <li><span>3</span>Kumpulkan lewat form</li>
+      </ol>
+    </div>
+  </header>
+
+  <div class="bar">
+    <div class="wrap">
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <label class="search">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Cari dokumen atau form" autocomplete="off" aria-label="Cari">
+        <kbd>/</kbd>
+      </label>
+    </div>
+  </div>
+
+  <main class="wrap">
+    <p class="meta" id="meta"></p>
+    <div class="grid" id="app"><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
+  </main>
+  <footer class="wrap">Tombol “Belum tersedia” berarti admin belum menambahkan tautannya. Daftar diperbarui otomatis.</footer>
+  <div class="toast" id="toast"></div>
+
+  <script src="js/common.js"></script>
+  <script src="js/student.js"></script>
+</body>
+</html>
