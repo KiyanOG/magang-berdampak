@@ -89,17 +89,30 @@ dialog::backdrop{background:rgba(5,4,14,.7)}
      aksesnya ke "Siapa saja yang memiliki link" (Anyone with the link)
    ===================================================================== */
 const ITEMS = [
-  { id: "panduan",   group: "dokumen", tag: "PDF",      title: "Panduan dari LPPM",             desc: "Panduan resmi pelaksanaan magang dari LPPM.",             url: "" }, // TODO: tempel link panduan
-  { id: "fproposal", group: "dokumen", tag: "Template", title: "Format Laporan Proposal",       desc: "Template dan ketentuan penulisan proposal magang.",       url: "" }, // TODO
-  { id: "flaporan",  group: "dokumen", tag: "Template", title: "Format Laporan Magang",         desc: "Template dan ketentuan penulisan laporan akhir magang.",  url: "" }, // TODO
-  { id: "rpcp",      group: "dokumen", tag: "Template", title: "Format RP-CP",                  desc: "Template Rencana Pembelajaran dan Capaian Pembelajaran (Excel).", url: "" }, // TODO
-  { id: "logbook",   group: "dokumen", tag: "Form",     title: "Logbook Magang",                desc: "Form logbook kegiatan selama magang.",                    url: "" }, // TODO
+  //panduan & dokumen
+  { id: "panduan",   group: "dokumen", tag: "PDF",      title: "Panduan dari LPPM",             desc: "Panduan resmi pelaksanaan magang dari LPPM.",             
+    url: "https://drive.google.com/file/d/1a7Pz-CWN7KjSrsL0nxdLN7zmWACdicwf/view?usp=drive_link" }, // TODO: tempel link panduan
+  //proposal & laporan
+  { id: "fproposal", group: "dokumen", tag: "Template", title: "Format Laporan Proposal",       desc: "Template dan ketentuan penulisan proposal magang.",      
+    url: "" }, // TODO
+  { id: "flaporan",  group: "dokumen", tag: "Template", title: "Format Laporan Magang",         desc: "Template dan ketentuan penulisan laporan akhir magang.",  
+    url: "" }, // TODO
+  //rpcp & logbook
+  { id: "rpcp",      group: "dokumen", tag: "Template", title: "Format RP-CP",                  desc: "Template Rencana Pembelajaran dan Capaian Pembelajaran (Excel).", 
+    url: "https://docs.google.com/spreadsheets/d/1jFMFpAbbjFHOrYLViWsqlXOnv1Xe7U9z/edit?usp=drive_link&ouid=103842402505472814756&rtpof=true&sd=true" }, // TODO
+  { id: "logbook",   group: "dokumen", tag: "Form",     title: "Logbook Magang",                desc: "Form logbook kegiatan selama magang.",                    
+    url: "https://docs.google.com/spreadsheets/d/1sDI-razIsOm__K8nGsdkv79h8-IFXT2V-zmg54cG0ww/edit?usp=drive_link" }, // TODO
+  //contoh krja praktik
   { id: "contoh",    group: "dokumen", tag: "Contoh",   title: "Contoh Kerja Praktik",          desc: "Contoh laporan kerja praktik sebagai referensi.",
     url: "https://drive.google.com/drive/folders/1lFuD-h2PYaY1vBmZVRJNHZD8T6U_SM48" },
-  { id: "kproposal", group: "kumpul",  tag: "Form",     title: "Pengumpulan Proposal",          desc: "Form pengumpulan laporan proposal magang.",               url: "" }, // TODO: link yang benar
-  { id: "klaporan",  group: "kumpul",  tag: "Form",     title: "Pengumpulan Laporan",           desc: "Form pengumpulan laporan akhir magang.",                  url: "" }, // TODO: link yang benar
-  { id: "knilai",    group: "kumpul",  tag: "Form",     title: "Scan Nilai Akhir",              desc: "Form unggah scan nilai akhir dari instansi.",             url: "" }, // TODO
-  { id: "kproyek",   group: "kumpul",  tag: "Form",     title: "Penggunaan Proyek dari Instansi", desc: "Form pengumpulan bukti penggunaan proyek oleh instansi.", url: "" }  // TODO: link yang benar / atur akses
+  { id: "kproposal", group: "kumpul",  tag: "Form",     title: "Pengumpulan Proposal",          desc: "Form pengumpulan laporan proposal magang.",               
+    url: "" }, // TODO: link yang benar
+  { id: "klaporan",  group: "kumpul",  tag: "Form",     title: "Pengumpulan Laporan",           desc: "Form pengumpulan laporan akhir magang.",                  
+    url: "https://docs.google.com/forms/d/e/1FAIpQLScHpD13-fJ_seXtghGzpW2cCasExnO8JK7yLhnbmAO3RNX2_g/viewform" }, // TODO: link yang benar
+  { id: "knilai",    group: "kumpul",  tag: "Form",     title: "Scan Nilai Akhir",              desc: "Form unggah scan nilai akhir dari instansi.",             
+    url: "https://forms.gle/c9FX2uGCpup8u4LcA" }, // TODO
+  { id: "kproyek",   group: "kumpul",  tag: "Form",     title: "Penggunaan Proyek dari Instansi", desc: "Form pengumpulan bukti penggunaan proyek oleh instansi.", 
+    url: "https://docs.google.com/forms/d/e/1FAIpQLScCQSe1yRULo8uZ0hVgi3481xWKwZyGXEW_1e4DPr_mkafupA/viewform" }  // TODO: link yang benar / atur akses
 ];
 
 const TABS = [
