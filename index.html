@@ -1,49 +1,209 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Magang Berdampak</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Magang Berdampak</title>
+<style>
+:root{--bg:#0f0d1c;--card:#1a1730;--card2:#221f3d;--text:#f1effa;--muted:#a29fc0;--line:#2d2950;--accent:#8b7bff;--green:#5ee0a0;--greenbg:#16342a}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:1040px;margin:0 auto;padding:36px 18px 64px}
+.badge{display:inline-block;background:var(--card2);color:var(--accent);font-weight:600;font-size:13px;padding:4px 12px;border-radius:99px}
+h1{font-size:clamp(28px,6vw,42px);line-height:1.15;margin:14px 0 8px}
+.lead{color:var(--muted);margin:0;max-width:62ch}
+.bar{position:sticky;top:0;z-index:5;background:var(--bg);display:flex;gap:10px;flex-wrap:wrap;align-items:center;padding:14px 0;margin-top:18px}
+.tab{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:99px;padding:8px 16px;font:inherit;font-size:14px;font-weight:600;cursor:pointer}
+.tab small{color:var(--muted);margin-left:4px}
+.tab.on{background:#fff;color:#14112a;border-color:#fff}
+.tab.on small{color:#5d5a78}
+.search{flex:1;min-width:220px;display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:99px;padding:0 14px}
+.search input{flex:1;background:none;border:0;outline:0;color:var(--text);font:inherit;font-size:14px;padding:10px 0}
+.search kbd{font-size:12px;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:0 6px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:16px;margin-top:6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:10px;transition:border-color .15s,transform .15s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.top{display:flex;justify-content:space-between;align-items:flex-start}
+.ico{width:46px;height:46px;border-radius:12px;background:var(--card2);color:var(--accent);display:grid;place-items:center}
+.tag{font-size:12px;font-weight:700;color:var(--green);background:var(--greenbg);padding:3px 10px;border-radius:99px}
+.card h3{margin:4px 0 0;font-size:17px}
+.card p{margin:0;color:var(--muted);font-size:14px;flex:1}
+.acts{display:flex;gap:8px;margin-top:6px}
+.btn{flex:1;display:flex;align-items:center;justify-content:center;gap:8px;background:#fff;color:#14112a;border:0;border-radius:12px;padding:12px;font:inherit;font-weight:700;font-size:14px;cursor:pointer;text-decoration:none}
+.btn.off{background:var(--card2);color:var(--muted);cursor:not-allowed}
+.sq{flex:0 0 46px;display:grid;place-items:center;background:var(--card2);color:var(--text);border:1px solid var(--line);border-radius:12px;text-decoration:none}
+.sq.off{opacity:.4;pointer-events:none}
+.empty{color:var(--muted);text-align:center;padding:40px 0}
+footer{margin-top:44px;color:var(--muted);font-size:13px}
+dialog{width:min(1100px,96vw);height:min(88vh,900px);max-width:none;max-height:none;padding:0;border:1px solid var(--line);border-radius:16px;background:var(--card);color:var(--text);overflow:hidden}
+dialog[open]{display:flex;flex-direction:column}
+dialog::backdrop{background:rgba(5,4,14,.7)}
+.vh{display:flex;align-items:center;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line)}
+.vh b{flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.vh .btn{flex:0 0 auto;padding:8px 14px}
+.vh .ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.vb{flex:1;position:relative;background:#fff}
+.vb iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.vf{font-size:12px;color:var(--muted);padding:6px 14px;border-top:1px solid var(--line)}
+@media (max-width:600px){dialog{width:100vw;height:100dvh;border-radius:0}}
+</style>
 </head>
 <body>
-  <header class="hero">
-    <div class="wrap">
-      <div>
-        <span class="pill"><i></i>Magang Berdampak</span>
-        <h1>Pusat Informasi &amp; Pengumpulan Magang</h1>
-        <p>Panduan, format, dan tautan pengumpulan dokumen magang ada di satu tempat.</p>
-      </div>
-      <ol class="steps">
-        <b>Alur singkat</b>
-        <li><span>1</span>Baca panduan &amp; format</li>
-        <li><span>2</span>Siapkan dokumen</li>
-        <li><span>3</span>Kumpulkan lewat form</li>
-      </ol>
-    </div>
-  </header>
+<div class="wrap">
+  <span class="badge">Magang Berdampak</span>
+  <h1>Pusat Informasi &amp; Pengumpulan Magang</h1>
+  <p class="lead">Semua panduan, format, dan tautan pengumpulan dokumen magang ada di satu tempat.</p>
 
   <div class="bar">
-    <div class="wrap">
-      <div class="tabs" id="tabs" role="tablist"></div>
-      <label class="search">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-        <input id="q" type="search" placeholder="Cari dokumen atau form" autocomplete="off" aria-label="Cari">
-        <kbd>/</kbd>
-      </label>
-    </div>
+    <div id="tabs" style="display:flex;gap:10px;flex-wrap:wrap"></div>
+    <label class="search">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Cari dokumen atau form" autocomplete="off">
+      <kbd>/</kbd>
+    </label>
   </div>
 
-  <main class="wrap">
-    <p class="meta" id="meta"></p>
-    <div class="grid" id="app"><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
-  </main>
-  <div class="toast" id="toast"></div>
+  <main id="grid" class="grid"></main>
+  <p id="empty" class="empty" hidden>Tidak ada yang cocok dengan pencarian.</p>
+  <footer>Jika tombol belum aktif, tautan belum tersedia. Hubungi admin program.</footer>
+</div>
 
-  <script src="js/common.js"></script>
-  <script src="js/student.js"></script>
+<dialog id="dlg">
+  <div class="vh">
+    <b id="vt"></b>
+    <a id="vn" class="btn ghost" target="_blank" rel="noopener noreferrer">Buka di tab baru</a>
+    <button class="btn" id="vc">Tutup</button>
+  </div>
+  <div class="vb"><iframe id="fr" title="Tampilan dokumen" loading="lazy" allow="fullscreen"
+    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox allow-downloads"></iframe></div>
+  <div class="vf">Kalau halaman tidak tampil atau kosong, klik "Buka di tab baru".</div>
+</dialog>
+
+<script>
+/* =====================================================================
+   DAFTAR KARTU & LINK  -  UBAH LINK DI SINI SAJA
+   - url: ""  -> tombol otomatis jadi "Belum tersedia"
+   - group: "dokumen" (Panduan & Dokumen) atau "kumpul" (Pengumpulan)
+   - tag: label kecil di pojok kartu (PDF / Template / Form / Contoh)
+   - Google Drive: pakai link tanpa "/u/2/" (indeks akun), dan atur
+     aksesnya ke "Siapa saja yang memiliki link" (Anyone with the link)
+   ===================================================================== */
+const ITEMS = [
+  { id: "panduan",   group: "dokumen", tag: "PDF",      title: "Panduan dari LPPM",             desc: "Panduan resmi pelaksanaan magang dari LPPM.",             url: "" }, // TODO: tempel link panduan
+  { id: "fproposal", group: "dokumen", tag: "Template", title: "Format Laporan Proposal",       desc: "Template dan ketentuan penulisan proposal magang.",       url: "" }, // TODO
+  { id: "flaporan",  group: "dokumen", tag: "Template", title: "Format Laporan Magang",         desc: "Template dan ketentuan penulisan laporan akhir magang.",  url: "" }, // TODO
+  { id: "rpcp",      group: "dokumen", tag: "Template", title: "Format RP-CP",                  desc: "Template Rencana Pembelajaran dan Capaian Pembelajaran (Excel).", url: "" }, // TODO
+  { id: "logbook",   group: "dokumen", tag: "Form",     title: "Logbook Magang",                desc: "Form logbook kegiatan selama magang.",                    url: "" }, // TODO
+  { id: "contoh",    group: "dokumen", tag: "Contoh",   title: "Contoh Kerja Praktik",          desc: "Contoh laporan kerja praktik sebagai referensi.",
+    url: "https://drive.google.com/drive/folders/1lFuD-h2PYaY1vBmZVRJNHZD8T6U_SM48" },
+  { id: "kproposal", group: "kumpul",  tag: "Form",     title: "Pengumpulan Proposal",          desc: "Form pengumpulan laporan proposal magang.",               url: "" }, // TODO: link yang benar
+  { id: "klaporan",  group: "kumpul",  tag: "Form",     title: "Pengumpulan Laporan",           desc: "Form pengumpulan laporan akhir magang.",                  url: "" }, // TODO: link yang benar
+  { id: "knilai",    group: "kumpul",  tag: "Form",     title: "Scan Nilai Akhir",              desc: "Form unggah scan nilai akhir dari instansi.",             url: "" }, // TODO
+  { id: "kproyek",   group: "kumpul",  tag: "Form",     title: "Penggunaan Proyek dari Instansi", desc: "Form pengumpulan bukti penggunaan proyek oleh instansi.", url: "" }  // TODO: link yang benar / atur akses
+];
+
+const TABS = [
+  { id: "semua",   label: "Semua" },
+  { id: "dokumen", label: "Panduan & Dokumen" },
+  { id: "kumpul",  label: "Pengumpulan" }
+];
+
+/* ---------- Kode di bawah ini tidak perlu diubah ---------- */
+const $ = id => document.getElementById(id);
+const el = (t, p = {}, k = []) => { const n = document.createElement(t); Object.assign(n, p); k.forEach(c => n.append(c)); return n; };
+const svg = d => { const s = document.createElementNS("http://www.w3.org/2000/svg", "svg"); s.setAttribute("width", 22); s.setAttribute("height", 22); s.setAttribute("viewBox", "0 0 24 24"); s.setAttribute("fill", "none"); s.setAttribute("stroke", "currentColor"); s.setAttribute("stroke-width", 2); s.setAttribute("stroke-linecap", "round"); s.setAttribute("stroke-linejoin", "round"); s.innerHTML = d; return s; };
+const ICON_DOC   = '<path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/>';
+const ICON_CHECK = '<rect x="4" y="4" width="16" height="16" rx="3"/><path d="m9 12 2 2 4-4"/>';
+const ICON_EYE   = '<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/>';
+const ICON_OPEN  = '<path d="M14 4h6v6M10 14 20 4M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5"/>';
+
+// Hanya izinkan http/https. Link folder Drive dirapikan (buang /u/2/ dst).
+function clean(u) {
+  try {
+    const x = new URL(u);
+    if (!/^https?:$/.test(x.protocol)) return "";
+    if (x.hostname === "drive.google.com") {
+      const f = x.pathname.match(/\/folders\/([^/?#]+)/);
+      if (f) return "https://drive.google.com/drive/folders/" + f[1];
+    }
+    return x.href;
+  } catch (e) { return ""; }
+}
+
+// Versi link yang bisa ditampilkan di iframe
+function embed(href) {
+  try {
+    const u = new URL(href);
+    if (u.hostname === "drive.google.com") {
+      const f = u.pathname.match(/\/folders\/([^/?#]+)/);
+      if (f) return "https://drive.google.com/embeddedfolderview?id=" + f[1] + "#list";
+      const d = u.pathname.match(/\/file\/d\/([^/]+)/);
+      if (d) return "https://drive.google.com/file/d/" + d[1] + "/preview";
+    }
+    if (u.hostname === "docs.google.com") {
+      if (/\/forms\//.test(u.pathname)) { u.searchParams.set("embedded", "true"); return u.href; }
+      return href.replace(/\/(edit|view)([?#].*)?$/, "/preview");
+    }
+    return href;
+  } catch (e) { return href; }
+}
+
+let tab = "semua", query = "";
+
+function renderTabs() {
+  const box = $("tabs");
+  box.replaceChildren();
+  TABS.forEach(t => {
+    const n = t.id === "semua" ? ITEMS.length : ITEMS.filter(i => i.group === t.id).length;
+    const b = el("button", { className: "tab" + (t.id === tab ? " on" : ""), onclick: () => { tab = t.id; renderTabs(); renderCards(); } }, [t.label, el("small", { textContent: n })]);
+    box.append(b);
+  });
+}
+
+function renderCards() {
+  const g = $("grid");
+  g.replaceChildren();
+  const q = query.trim().toLowerCase();
+  const list = ITEMS.filter(i =>
+    (tab === "semua" || i.group === tab) &&
+    (!q || (i.title + " " + i.desc + " " + i.tag).toLowerCase().includes(q)));
+  $("empty").hidden = list.length > 0;
+  list.forEach(i => {
+    const href = clean(i.url);
+    const view = href
+      ? el("button", { className: "btn", onclick: () => openViewer(i.title, href) }, [svg(ICON_EYE), "Lihat di sini"])
+      : el("span", { className: "btn off", textContent: "Belum tersedia" });
+    const ext = href
+      ? el("a", { className: "sq", href, target: "_blank", rel: "noopener noreferrer", title: "Buka di tab baru" }, [svg(ICON_OPEN)])
+      : el("span", { className: "sq off" }, [svg(ICON_OPEN)]);
+    const ico = el("div", { className: "ico" }, [svg(i.group === "kumpul" ? ICON_CHECK : ICON_DOC)]);
+    g.append(el("div", { className: "card" }, [
+      el("div", { className: "top" }, [ico, el("span", { className: "tag", textContent: i.tag })]),
+      el("h3", { textContent: i.title }),
+      el("p", { textContent: i.desc }),
+      el("div", { className: "acts" }, [view, ext])
+    ]));
+  });
+}
+
+function openViewer(title, href) {
+  $("vt").textContent = title;
+  $("vn").href = href;
+  $("fr").src = embed(href);
+  $("dlg").showModal();
+}
+$("vc").onclick = () => $("dlg").close();
+$("dlg").addEventListener("close", () => { $("fr").src = "about:blank"; });
+$("dlg").addEventListener("click", e => { if (e.target === $("dlg")) $("dlg").close(); });
+
+$("q").addEventListener("input", e => { query = e.target.value; renderCards(); });
+document.addEventListener("keydown", e => {
+  if (e.key === "/" && document.activeElement !== $("q") && !$("dlg").open) { e.preventDefault(); $("q").focus(); }
+});
+
+renderTabs();
+renderCards();
+</script>
 </body>
 </html>
